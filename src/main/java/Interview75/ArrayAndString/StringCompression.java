@@ -1,5 +1,9 @@
 package Interview75.ArrayAndString;
 
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class StringCompression {
 
 //    public int compress(char[] chars) {
@@ -9,22 +13,21 @@ public class StringCompression {
 //        for(Character i : chars){
 //            countChar.put(i, countChar.getOrDefault(i,0)+1);
 //        }
-//
-//        char[] charArray = new char[countChar.size()*2];
-//
 //        int count = 0;
+//        int incrementer = 0;
 //        for(Map.Entry<Character, Integer> entry : countChar.entrySet()){
-//            if(countChar.size() == 1){
-//                charArray[0] = entry.getKey();
-//                break;
+//            chars[incrementer++] = entry.getKey();
+//            if(entry.getValue() == 1){
+//                continue;
 //            }
-//            charArray[count++] = entry.getKey();
-//            char temp = Integer.toString(entry.getValue()).charAt(0);
-//            charArray[count++] = temp;
+//            String temp = String.valueOf(entry.getValue());
+//            count += temp.length();
+//            for(int i=0; i<temp.length(); i++){
+//                chars[incrementer++] = temp.charAt(i);
+//            }
 //        }
 //
-//
-//        return countChar.size() == 1 ? 1 : countChar.size() *2;
+//        return countChar.size()+count;
 //    }
 
     public int compress(char[] chars) {
